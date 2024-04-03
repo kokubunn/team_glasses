@@ -70,3 +70,6 @@ end
 gem 'sassc-rails'
 gem 'bootstrap', '~> 5.3'
 gem 'mini_racer'
+
+# chartkick グラフ描画ツール
+gem "chartkick"
