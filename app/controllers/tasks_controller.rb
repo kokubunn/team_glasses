@@ -1,30 +1,39 @@
 class TasksController < ApplicationController
 
-def index
+  def index
 
-end
+  end
 
-def create
+  def create
 
-end
+  end
 
-def show
+  def show
 
-end
+  end
 
-def new
+  def new
 
-end
+  end
 
-def edit
+  def edit
 
-end
-def update
+  end
+  def update
 
-end
+  end
 
-def destroy
+  def destroy
 
-end
+  end
+
+  private
+
+  # def point_aggregate_each_user
+  #   @shun_point =
+  #   @yoshiyuki_point =
+  #   @kouhei_point =
+
+  # end
 
 end
