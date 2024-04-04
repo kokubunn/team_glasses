@@ -7,3 +7,24 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# ユーザーデータの作成
+User.create(user_name: 'しゅん', email: 'shun@example.com', password_digest: 'password')
+User.create(user_name: 'よしゆき', email: 'yoshiyuki@example.com', password_digest: 'password')
+User.create(user_name: 'こうへい', email: 'kouhei@example.com', password_digest: 'password')
+
+# 10個のタスクの作成
+10.times do |i|
+  Task.create(
+    title: "task#{i+1}",
+    point: rand(3..8)
+    )
+end
+
+# 20個のタスクとユーザーの関連付けの作成
+20.times do
+  UserTask.create(
+    user_id: rand(1..3),
+    task_id: rand(3..8)
+    )
+end
