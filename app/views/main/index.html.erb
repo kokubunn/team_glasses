@@ -1,3 +1,4 @@
-<% if @user %>
-  <h1>こんにちは、<%= @user.user_name %>さん</h1>
+<% if Current.user %>
+  <h1>こんにちは、<%= Current.user.user_name %>さん</h1>
+  <%= button_to "ログアウト", logout_path, method: :delete, class: 'btn btn-primary' %>
 <% end %>

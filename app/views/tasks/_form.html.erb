@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-body">
+    <%= form_with(model: task) do |form| %>
+      <% if task.errors.any? %>
+        <div id="error_explanation" class="alert alert-danger">
+          <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+          <ul>
+            <% task.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="mb-3">
+        <%= form.label :title, class: 'form-label' %>
+        <%= form.text_field :title, id: :task_title, class: 'form-control' %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :points, class: 'form-label' %>
+        <%= form.number_field :points, id: :task_points, class: 'form-control' %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit 'Save', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>
