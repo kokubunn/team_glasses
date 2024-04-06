@@ -1,45 +1,5 @@
 class TasksController < ApplicationController
     before_action :set_task, only: [:show, :edit, :update, :destroy]
-
-<<<<<<< HEAD
-  def index
-
-  end
-
-  def create
-
-  end
-
-  def show
-
-  end
-
-  def new
-
-  end
-
-  def edit
-
-  end
-  def update
-
-  end
-
-  def destroy
-
-  end
-
-  private
-
-  # def point_aggregate_each_user
-  #   @shun_point =
-  #   @yoshiyuki_point =
-  #   @kouhei_point =
-
-  # end
-
-end
-=======
     def index
       @tasks = Task.all
     end
@@ -75,6 +35,15 @@ end
       redirect_to tasks_path
     end
 
+    def get_point
+      @userTask = UserTask.new
+      @userTask.user_id = Current.user.id
+      @userTask.task_id = params[:task_id]
+      if @userTask.save
+        flash[:success] = "ポイントget！"
+      end
+    end
+
     private
 
     def set_task
@@ -84,5 +53,5 @@ end
     def task_params
       params.require(:task).permit(:title, :points)
     end
+
   end
->>>>>>> develop
