@@ -1,4 +1,8 @@
 <% if Current.user %>
   <h1>こんにちは、<%= Current.user.user_name %>さん</h1>
   <%= button_to "ログアウト", logout_path, method: :delete, class: 'btn btn-primary' %>
+  <%= link_to 'タスク一覧', tasks_path, class: 'my-2 btn btn-primary' %>
 <% end %>
+
+<%= column_chart(@user_data) %>
+

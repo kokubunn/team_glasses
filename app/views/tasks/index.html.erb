@@ -1,6 +1,7 @@
 <div class="container mt-4">
   <h1>Tasks</h1>
   <%= link_to 'New Task', new_task_path, class: 'btn btn-primary' %>
+  <%= link_to 'ポイント確認', root_path, class: 'btn btn-primary' %>
 
   <table class="table table-striped">
     <thead class="thead-dark">
@@ -16,6 +17,7 @@
         <tr>
           <td><%= link_to task.title, task, class: 'text-decoration-none' %></td>
           <td><%= task.points %></td>
+          <td><%= link_to 'PointGet!', getpoint_path(task_id: task.id), data: {turbo_method: :post}, class: 'btn btn-info' %></td>
           <td><%= link_to 'Edit', edit_task_path(task), class: 'btn btn-secondary' %></td>
           <td><%= link_to 'Destroy', task, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-danger' %></td>
         </tr>

@@ -9,15 +9,15 @@
 #   end
 
 # ユーザーデータの作成
-User.create(user_name: 'しゅん', email: 'shun@example.com', password_digest: 'password')
-User.create(user_name: 'よしゆき', email: 'yoshiyuki@example.com', password_digest: 'password')
-User.create(user_name: 'こうへい', email: 'kouhei@example.com', password_digest: 'password')
+User.create(user_name: 'しゅん', email: 'shun@example.com', password: 'password')
+User.create(user_name: 'よしゆき', email: 'yoshiyuki@example.com', password: 'password')
+User.create(user_name: 'こうへい', email: 'kouhei@example.com', password: 'password')
 
 # 10個のタスクの作成
 10.times do |i|
   Task.create(
     title: "task#{i+1}",
-    point: rand(3..8)
+    points: rand(3..8)
     )
 end
 

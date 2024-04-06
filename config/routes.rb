@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root to: "main#index"
   get "up" => "rails/health#show", as: :rails_health_check
   resources :tasks
+  post "getpoint", to: "tasks#get_point"
   get "signup", to: "signup#new"
   post "signup", to: "signup#create"
   get "login", to: "sessions#new"
