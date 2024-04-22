@@ -10,8 +10,8 @@ class SessionsController < ApplicationController
             flash[:success] = "ログインしました。"
             redirect_to root_path
         else
-            flash[:danger] = "ログイン失敗しました。もう一度試してください。"
-            render action: :new
+            flash[:now] = "ログイン失敗しました。もう一度試してください。"
+            render action: :new, status: :unprocessable_entity
         end
     end
 
