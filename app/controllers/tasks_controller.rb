@@ -44,6 +44,21 @@ class TasksController < ApplicationController
       end
     end
 
+    def mypage
+      current_user = User.find_by(id: session[:user_id])
+      if current_user
+        @tasks = current_user.tasks
+        user = current_user
+        @user_data = {}
+        @user_data[user.user_name] = user.total_points
+        
+
+      else
+        flash[:alert] = "ユーザーが見つかりません。"
+        redirect_to root_path
+      end
+    end
+
     private
 
     def set_task
@@ -53,5 +68,4 @@ class TasksController < ApplicationController
     def task_params
       params.require(:task).permit(:title, :points)
     end
-
   end
