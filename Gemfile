@@ -73,3 +73,10 @@ gem 'mini_racer'
 
 # chartkick グラフ描画ツール
 gem "chartkick"
+
+# railsでSlackAPIを利用するライブラリ
+gem 'slack-ruby-client'
+gem 'async-websocket', '~> 0.8.0'
+
+# railsで環境変数を利用するライブラリ
+gem 'dotenv-rails'
